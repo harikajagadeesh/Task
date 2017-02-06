@@ -1,0 +1,25 @@
+<project>
+
+    <target name="clean">
+        <delete dir="/Users/harik/Documents/Application/App/build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="/Users/harik/Documents/Application/App/build/classes"/>
+        <javac srcdir="/Users/harik/Documents/Application/App/Maincode" destdir="/Users/harik/Documents/Application/App/build/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="/Users/harik/Documents/Application/App/build/jar"/>
+        <jar destfile="/Users/harik/Documents/Application/App/build/jar/HelloWorld.jar" basedir="/Users/harik/Documents/Application/App/build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="/Users/harik/Documents/Application/App/build/jar/HelloWorld.jar" fork="true"/>
+    </target>
+
+</project>
